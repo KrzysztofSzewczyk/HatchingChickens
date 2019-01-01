@@ -1,5 +1,6 @@
 package palaiologos.HatchingChickens;
 
+import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -21,6 +22,7 @@ public class HatchingChickens {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		FMLCommonHandler.instance().bus().register(new ChickenHatchEventHandler());
+			ClientCommandHandler.instance.registerCommand(new ModDebugCommand());
 	}
 
 	@Mod.EventHandler
